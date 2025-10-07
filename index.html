@@ -221,6 +221,8 @@
             text-align: center;
             transition: all 0.3s;
             border: 1px solid rgba(0, 212, 255, 0.2);
+            cursor: pointer;
+            position: relative;
         }
 
         .skill-item:hover {
@@ -251,6 +253,12 @@
             padding-left: 2rem;
             border-left: 3px solid rgba(0, 212, 255, 0.5);
             position: relative;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .experience-item:hover {
+            border-color: rgba(0, 255, 200, 0.8);
         }
 
         .experience-item::before {
@@ -348,6 +356,95 @@
                 font-size: 0.9rem;
             }
         }
+
+        /* Modal/Burbuja de información */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-bubble {
+            background: linear-gradient(135deg, rgba(15, 32, 39, 0.95), rgba(32, 58, 67, 0.95));
+            border: 2px solid rgba(0, 212, 255, 0.5);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 
+                0 20px 60px rgba(0, 150, 255, 0.4),
+                0 0 100px rgba(0, 212, 255, 0.3);
+            transform: scale(0.8);
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .modal-overlay.active .modal-bubble {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0, 212, 255, 0.2);
+            border: 1px solid rgba(0, 212, 255, 0.5);
+            color: #fff;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .modal-close:hover {
+            background: rgba(0, 212, 255, 0.4);
+            transform: rotate(90deg);
+        }
+
+        .modal-bubble h3 {
+            color: #00d4ff;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.5);
+            padding-bottom: 0.5rem;
+        }
+
+        .modal-bubble p {
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .modal-bubble ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .modal-bubble li {
+            margin: 0.5rem 0;
+            color: rgba(255, 255, 255, 0.9);
+        }
     </style>
 </head>
 <body>
@@ -384,31 +481,31 @@
         <div class="card">
             <h2>Technical Skills</h2>
             <div class="skill-grid">
-                <div class="skill-item">
+                <div class="skill-item" onclick="openModal('javascript')">
                     <div>JavaScript</div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 0" data-width="90"></div>
                     </div>
                 </div>
-                <div class="skill-item">
+                <div class="skill-item" onclick="openModal('c')">
                     <div>C</div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 0" data-width="90"></div>
                     </div>
                 </div>
-                <div class="skill-item">
+                <div class="skill-item" onclick="openModal('python')">
                     <div>Python</div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 0" data-width="80"></div>
                     </div>
                 </div>
-                <div class="skill-item">
+                <div class="skill-item" onclick="openModal('html-css')">
                     <div>CSS/HTML</div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 0" data-width="85"></div>
                     </div>
                 </div>
-                <div class="skill-item">
+                <div class="skill-item" onclick="openModal('nodejs')">
                     <div>Node.js</div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 0" data-width="70"></div>
@@ -422,19 +519,19 @@
         <div class="card">
             <h2>Profesional Experience</h2>
             
-            <div class="experience-item">
+            <div class="experience-item" onclick="openModal('exp1')">
                 <h3>Desarrollador Senior - Empresa Tech</h3>
                 <div class="date">Enero 2022 - Presente</div>
                 <p>Lideré el desarrollo de aplicaciones web escalables, mejorando el rendimiento en un 40% y la experiencia de usuario significativamente.</p>
             </div>
 
-            <div class="experience-item">
+            <div class="experience-item" onclick="openModal('exp2')">
                 <h3>Desarrollador Full Stack - StartUp Innovadora</h3>
                 <div class="date">Marzo 2020 - Diciembre 2021</div>
                 <p>Desarrollé desde cero la plataforma principal, implementando arquitectura moderna y mejores prácticas de desarrollo.</p>
             </div>
 
-            <div class="experience-item">
+            <div class="experience-item" onclick="openModal('exp3')">
                 <h3>Desarrollador Junior - Agencia Digital</h3>
                 <div class="date">Junio 2018 - Febrero 2020</div>
                 <p>Colaboré en proyectos diversos para clientes internacionales, ganando experiencia en múltiples tecnologías.</p>
@@ -478,7 +575,176 @@
         </div>
     </section>
 
+    <!-- Modal para mostrar información detallada -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-bubble">
+            <button class="modal-close">&times;</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
     <script>
+        console.log('Script cargado correctamente');
+        // Contenido de los modals
+        const modalData = {
+            'javascript': {
+                title: 'JavaScript',
+                content: `
+                    <p>Experiencia avanzada en JavaScript moderno (ES6+) para desarrollo web dinámico e interactivo.</p>
+                    <ul>
+                        <li>Desarrollo de aplicaciones SPA (Single Page Applications)</li>
+                        <li>Manipulación del DOM y eventos</li>
+                        <li>Programación asíncrona con Promises y Async/Await</li>
+                        <li>APIs REST y fetch</li>
+                        <li>Frameworks: React, Vue.js</li>
+                    </ul>
+                `
+            },
+            'c': {
+                title: 'Lenguaje C',
+                content: `
+                    <p>Sólidos conocimientos en programación de sistemas y bajo nivel.</p>
+                    <ul>
+                        <li>Gestión de memoria y punteros</li>
+                        <li>Estructuras de datos avanzadas</li>
+                        <li>Programación de sistemas embebidos</li>
+                        <li>Optimización de código</li>
+                        <li>Desarrollo de drivers y módulos del kernel</li>
+                    </ul>
+                `
+            },
+            'python': {
+                title: 'Python',
+                content: `
+                    <p>Desarrollo con Python para automatización, scripting y análisis de datos.</p>
+                    <ul>
+                        <li>Scripts de automatización y DevOps</li>
+                        <li>Análisis de datos con Pandas y NumPy</li>
+                        <li>Desarrollo web con Flask/Django</li>
+                        <li>Machine Learning básico</li>
+                        <li>APIs y web scraping</li>
+                    </ul>
+                `
+            },
+            'html-css': {
+                title: 'HTML & CSS',
+                content: `
+                    <p>Diseño y desarrollo de interfaces web modernas y responsivas.</p>
+                    <ul>
+                        <li>HTML5 semántico y accesible</li>
+                        <li>CSS3 con Flexbox y Grid</li>
+                        <li>Diseño responsive y mobile-first</li>
+                        <li>Animaciones y transiciones CSS</li>
+                        <li>Preprocesadores: SASS/SCSS</li>
+                    </ul>
+                `
+            },
+            'nodejs': {
+                title: 'Node.js',
+                content: `
+                    <p>Desarrollo backend con Node.js para aplicaciones escalables.</p>
+                    <ul>
+                        <li>APIs RESTful con Express.js</li>
+                        <li>Gestión de bases de datos (MongoDB, MySQL)</li>
+                        <li>Autenticación y autorización (JWT, OAuth)</li>
+                        <li>WebSockets para aplicaciones en tiempo real</li>
+                        <li>Despliegue en cloud (AWS, Heroku)</li>
+                    </ul>
+                `
+            },
+            'exp1': {
+                title: 'Desarrollador Senior - Empresa Tech',
+                content: `
+                    <p><strong>Período:</strong> Enero 2022 - Presente</p>
+                    <p>Como desarrollador senior, lideré múltiples proyectos clave para la empresa:</p>
+                    <ul>
+                        <li>Arquitectura y desarrollo de aplicaciones web escalables</li>
+                        <li>Implementación de microservicios con Docker y Kubernetes</li>
+                        <li>Mentoría de desarrolladores junior y mid-level</li>
+                        <li>Optimización de rendimiento: reducción del 40% en tiempos de carga</li>
+                        <li>Integración de CI/CD con Jenkins y GitHub Actions</li>
+                        <li>Code reviews y establecimiento de mejores prácticas</li>
+                    </ul>
+                    <p><strong>Tecnologías:</strong> React, Node.js, AWS, Docker, PostgreSQL</p>
+                `
+            },
+            'exp2': {
+                title: 'Desarrollador Full Stack - StartUp Innovadora',
+                content: `
+                    <p><strong>Período:</strong> Marzo 2020 - Diciembre 2021</p>
+                    <p>Desarrollo completo de la plataforma principal de la startup:</p>
+                    <ul>
+                        <li>Diseño e implementación de arquitectura moderna</li>
+                        <li>Desarrollo frontend con React y Redux</li>
+                        <li>Backend con Node.js y Express</li>
+                        <li>Integración de pasarelas de pago (Stripe)</li>
+                        <li>Implementación de sistema de notificaciones en tiempo real</li>
+                        <li>Pruebas unitarias y de integración</li>
+                    </ul>
+                    <p><strong>Tecnologías:</strong> React, Redux, Node.js, MongoDB, Socket.io</p>
+                `
+            },
+            'exp3': {
+                title: 'Desarrollador Junior - Agencia Digital',
+                content: `
+                    <p><strong>Período:</strong> Junio 2018 - Febrero 2020</p>
+                    <p>Primeros pasos profesionales en desarrollo web:</p>
+                    <ul>
+                        <li>Desarrollo de sitios web corporativos y landing pages</li>
+                        <li>Maquetación responsive con HTML5, CSS3 y JavaScript</li>
+                        <li>Integración de CMS (WordPress, Drupal)</li>
+                        <li>Colaboración en proyectos para clientes internacionales</li>
+                        <li>Aprendizaje de metodologías ágiles (Scrum)</li>
+                        <li>Control de versiones con Git</li>
+                    </ul>
+                    <p><strong>Tecnologías:</strong> HTML, CSS, JavaScript, PHP, WordPress, Git</p>
+                `
+            }
+        };
+
+        function openModal(id) {
+            console.log('Abriendo modal:', id);
+            const modal = document.getElementById('modalOverlay');
+            const content = document.getElementById('modalContent');
+            const data = modalData[id];
+            
+            console.log('Modal element:', modal);
+            console.log('Content element:', content);
+            console.log('Data:', data);
+            
+            if (data) {
+                content.innerHTML = `<h3>${data.title}</h3>${data.content}`;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                console.log('Modal abierto');
+            } else {
+                console.log('No se encontró data para:', id);
+            }
+        }
+
+        function closeModal(event) {
+            console.log('Cerrando modal');
+            const modal = document.getElementById('modalOverlay');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Event listeners para cerrar modal
+        document.getElementById('modalOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        document.querySelector('.modal-close').addEventListener('click', closeModal);
+
+        // Cerrar modal con tecla ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
         // Animación de scroll para secciones
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -505,8 +771,11 @@
         document.querySelectorAll('.nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             });
         });
 
