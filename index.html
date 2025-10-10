@@ -110,24 +110,28 @@
             margin-bottom: 2rem;
             animation: fadeInUp 1s 0.3s both;
         }
-
         .profile-img {
-            width: 100px;
-            height: 1000px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #0096ff 0%, #00d4ff 50%, #00ff88 100%);
-            margin: 2rem auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            animation: float 3s ease-in-out infinite;
-            box-shadow: 
-                0 20px 60px rgba(0, 150, 255, 0.4),
-                0 0 100px rgba(0, 212, 255, 0.2),
-                inset 0 0 50px rgba(255, 255, 255, 0.1);
-            border: 3px solid rgba(0, 255, 200, 0.3);
-        }
+             width: 150px; /* tamaño del círculo */
+             height: 150px;
+             border-radius: 50%;
+             object-fit: cover; /* recorta la foto para que llene el círculo */
+             display: block;
+             margin: 2rem auto;
+             border: 3px solid rgba(0, 255, 200, 0.5); /* borde brillante */
+             box-shadow:
+             0 10px 25px rgba(0, 150, 255, 0.3),   /* sombra azul suave */
+             0 0 15px rgba(0, 212, 255, 0.4),      /* brillo alrededor */
+             inset 0 0 10px rgba(255, 255, 255, 0.1); /* brillo interno suave */
+             transition: transform 0.3s ease, box-shadow 0.3s ease;
+         }
+
+         .profile-img:hover {
+             transform: scale(1.05);
+             box-shadow:
+             0 15px 35px rgba(0, 150, 255, 0.5),
+             0 0 25px rgba(0, 255, 200, 0.6);
+         }
+
 
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
@@ -479,7 +483,7 @@
 
     <section id="inicio" class="section hero visible">
         <div class="profile-img">
-            <img src="33035_95daf9896e282ef6f5c8913e2d06163e-27_5_2025, 22_28_28.jpg" alt="Descripción de la imagen">
+            <img src="33035_95daf9896e282ef6f5c8913e2d06163e-27_5_2025, 22_28_28.jpg" alt="Foto de perfil" class="profile-img">
         </div>
         <h1>DANIEL BROX MARCHANTE</h1>
         <p class="subtitle">TELEMATICS ENGINEERING STUDENT</p>
