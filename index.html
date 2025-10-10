@@ -554,8 +554,8 @@
         <div class="card">
             <h2>Technical Skills</h2>
             <div class="skill-grid">
-                <div class="skill-item" onclick="openModal('javascript')">
-                    <div>JavaScript</div>
+                <div class="skill-item" onclick="openModal('cloud')">
+                    <div>Cloud</div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 0" data-width="90"></div>
                     </div>
@@ -563,7 +563,7 @@
                 <div class="skill-item" onclick="openModal('c')">
                     <div>C</div>
                     <div class="skill-bar">
-                        <div class="skill-progress" style="width: 0" data-width="90"></div>
+                        <div class="skill-progress" style="width: 0" data-width="95"></div>
                     </div>
                 </div>
                 <div class="skill-item" onclick="openModal('python')">
@@ -575,13 +575,7 @@
                 <div class="skill-item" onclick="openModal('html-css')">
                     <div>CSS/HTML</div>
                     <div class="skill-bar">
-                        <div class="skill-progress" style="width: 0" data-width="85"></div>
-                    </div>
-                </div>
-                <div class="skill-item" onclick="openModal('nodejs')">
-                    <div>Node.js</div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 0" data-width="70"></div>
+                        <div class="skill-progress" style="width: 0" data-width="80"></div>
                     </div>
                 </div>
             </div>
@@ -593,13 +587,13 @@
             <h2>Professional Experience</h2>
             
             <div class="experience-item" onclick="openModal('exp1')">
-                <h3>Event Assistant - IWHATEVENT ?</h3>
+                <h3>Event Assistant - WHATEVENT ?</h3>
                 <div class="date">July 2024 - Currently</div>
                 <p>Working as a waiter helped me build essential transferable skills such as teamwork, effective communication, and problem-solving under pressure. I learned to manage time efficiently, stay organized, and maintain attention to detail in fast-paced environments. These experiences strengthened my adaptability, customer-oriented mindset, and ability to work collaboratively</p>
             </div>
 
             <div class="experience-item" onclick="openModal('exp2')">
-                <h3>Waiter - ICasa Club Madrid</h3>
+                <h3>Waiter - Casa Club Madrid</h3>
                 <div class="date">January 2023 - January 2024</div>
                 <p>Customer service, catering and bar operations. Team work organization.</p>
             </div>
@@ -720,16 +714,15 @@
 
     <script>
         const modalData = {
-            'javascript': {
-                title: 'JavaScript',
+            'cloud': {
+                title: 'Cloud',
                 content: `
-                    <p>Advanced experience in modern JavaScript (ES6+) for dynamic and interactive web development.</p>
+                  <p> Basic Development in Cloud </p>
                     <ul>
-                        <li>Single Page Applications (SPA) development</li>
-                        <li>DOM manipulation and events</li>
-                        <li>Asynchronous programming with Promises and Async/Await</li>
-                        <li>REST APIs and fetch</li>
-                        <li>Frameworks: React, Vue.js</li>
+                        <li>1st Certification of AWS</li>
+                        <li>I would like to go for azure certifications</li>
+                        <li>Also for 2nd and 3rd Certification´s of AWS</li>
+                        
                     </ul>
                 `
             },
@@ -743,6 +736,7 @@
                         <li>Embedded systems programming</li>
                         <li>Code optimization</li>
                         <li>Driver and kernel module development</li>
+                        <li>I have been knowing C such a while along the carrer in so many signatures</li>
                     </ul>
                 `
             },
@@ -752,7 +746,7 @@
                     <p>Python development for automation, scripting, and data analysis.</p>
                     <ul>
                         <li>Automation and DevOps scripts</li>
-                        <li>Data analysis with Pandas and NumPy</li>
+                        <li>Programming python as a signature</li>
                         <li>Web development with Flask/Django</li>
                         <li>Basic Machine Learning</li>
                         <li>APIs and web scraping</li>
@@ -772,21 +766,8 @@
                     </ul>
                 `
             },
-            'nodejs': {
-                title: 'Node.js',
-                content: `
-                    <p>Backend development with Node.js for scalable applications.</p>
-                    <ul>
-                        <li>RESTful APIs with Express.js</li>
-                        <li>Database management (MongoDB, MySQL)</li>
-                        <li>Authentication and authorization (JWT, OAuth)</li>
-                        <li>WebSockets for real-time applications</li>
-                        <li>Cloud deployment (AWS, Heroku)</li>
-                    </ul>
-                `
-            },
             'exp1': {
-                title: 'Event Assistant - IWHATEVENT ?',
+                title: 'Event Assistant - WHATEVENT ?',
                 content: `
                     <p><strong>Period:</strong> July 2024 - Currently</p>
                     <p>Main responsibilities:</p>
@@ -801,7 +782,7 @@
                 `
             },
             'exp2': {
-                title: 'Waiter - ICasa Club Madrid',
+                title: 'Waiter - Casa Club Madrid',
                 content: `
                     <p><strong>Period:</strong> January 2023 - January 2024</p>
                     <p>Functions performed:</p>
@@ -816,24 +797,21 @@
                 `
             },
             'exp3': {
-                title: 'Private Teacher - UNIUM',
+                title: 'Event Safety Assistant  - UNIUM',
                 content: `
                     <p><strong>Period:</strong> January 2023 - June 2025</p>
                     <p>Teaching experience:</p>
                     <ul>
-                        <li>Private classes in scientific-technological subjects</li>
-                        <li>Levels: ESO and Bachillerato</li>
-                        <li>Preparation of personalized teaching materials</li>
-                        <li>Student progress tracking</li>
-                        <li>Methodology adaptation according to student needs</li>
-                        <li>Communication with parents and guardians</li>
+                        <li>Organization</li>
+                        <li>Leading with people problems and security</li>
+                        <li> Treating with such a lot of differente people and different countries</li>
                     </ul>
                 `
             },
             'exp4': {
-                title: 'Private Teacher - Colegio Santa Francisca Javier Cabrini',
+                title: 'Private Teacher ',
                 content: `
-                    <p><strong>Period:</strong> May 2022</p>
+                    <p><strong>Period:</strong> Sep 2022</p>
                     <p>Educational experience:</p>
                     <ul>
                         <li>Reinforcement classes in ESO and Bachillerato subjects</li>
