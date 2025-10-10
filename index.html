@@ -473,13 +473,17 @@
         .language-badge strong {
             color: #00d4ff;
         }
-        .modal-pdf {
-            width: 90vw;
-            height: 90vh;
-            border: none;
+        .modal-img {
+            display: block;
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;  /* evita que se deforme */
             border-radius: 10px;
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.3);
             background: #fff;
+            margin: 0 auto;
         }
+
         .pdf-btn-small {
             background: linear-gradient(90deg, #00d4ff, #00ff88);
             color: #fff;
@@ -660,7 +664,7 @@
             <div class="modal-bubble">
                     <button class="modal-close" onclick="closeModal()">&times;</button>
                     <h3>English Title</h3>
-                    <img src="tituloingles.jpg" type="application/pdf" class="modal-pdf"></iframe>
+                    <img src="tituloingles.jpg" alt="English Title" class="modal-img">
             </div>
          </div>
 
