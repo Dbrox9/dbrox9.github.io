@@ -473,6 +473,30 @@
         .language-badge strong {
             color: #00d4ff;
         }
+        .modal-pdf {
+            width: 80vw;
+            height: 80vh;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
+        }
+        .pdf-btn-small {
+            background: linear-gradient(90deg, #00d4ff, #00ff88);
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 0.3rem 0.8rem;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .pdf-btn-small:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+        }
+        
     </style>
 </head>
 <body>
@@ -624,6 +648,7 @@
                 </div>
                 <div class="language-badge">
                     <strong>🇬🇧 English:</strong> FIRST Level (B2)
+                    <button class="pdf-btn-small" onclick="openModal('pdfModal')">View Title</button>
                 </div>
                 <div class="language-badge">
                     <strong>🇩🇪 German:</strong> Basic Level (1º ESO - 4º ESO)
@@ -631,6 +656,13 @@
             </div>
         </div>
     </section>
+        <div id="pdfModal" class="modal-overlay">
+            <div class="modal-bubble">
+                    <button class="modal-close" onclick="closeModal()">&times;</button>
+                    <h3>English Title</h3>
+                    <iframe src="tituloingles.pdf" class="modal-pdf"></iframe>
+            </div>
+         </div>
 
     <section id="contacto" class="section">
         <div class="card">
