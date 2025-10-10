@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Interactive CV </title>
+    <title>Daniel Brox Marchante - CV Interactivo</title>
     <style>
         * {
             margin: 0;
@@ -232,22 +232,6 @@
             box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
         }
 
-        .skill-bar {
-            height: 8px;
-            background: rgba(0, 150, 255, 0.2);
-            border-radius: 10px;
-            margin-top: 0.5rem;
-            overflow: hidden;
-        }
-
-        .skill-progress {
-            height: 100%;
-            background: linear-gradient(90deg, #0096ff 0%, #00d4ff 50%, #00ff88 100%);
-            border-radius: 10px;
-            transition: width 1s ease-out;
-            box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
-        }
-
         .experience-item {
             margin-bottom: 2rem;
             padding-left: 2rem;
@@ -344,20 +328,48 @@
                 0 0 40px rgba(0, 255, 200, 0.3);
         }
 
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .language-item {
+            background: rgba(0, 150, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .language-item:hover {
+            background: rgba(0, 150, 255, 0.2);
+            transform: translateY(-5px);
+            border-color: rgba(0, 255, 200, 0.4);
+        }
+
+        .language-item h4 {
+            color: #00d4ff;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
             }
             .nav {
-                gap: 1rem;
+                gap: 0.5rem;
                 padding: 1rem;
+                flex-wrap: wrap;
             }
             .nav a {
-                font-size: 0.9rem;
+                font-size: 0.85rem;
             }
         }
 
-        /* Modal/Burbuja de información */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -449,67 +461,71 @@
 </head>
 <body>
     <nav class="nav">
-        <a href="#inicio">Main</a>
-        <a href="#sobre-mi">About me</a>
-        <a href="#habilidades">Skills</a>
-        <a href="#experiencia">Experience</a>
-        <a href="#contacto">Contact</a>
+        <a href="#inicio">Inicio</a>
+        <a href="#sobre-mi">Sobre Mí</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#educacion">Educación</a>
+        <a href="#idiomas">Idiomas</a>
+        <a href="#contacto">Contacto</a>
     </nav>
 
     <section id="inicio" class="section hero visible">
         <div class="profile-img">👤</div>
         <h1>DANIEL BROX MARCHANTE</h1>
-        <p class="subtitle">TELEMATICS ENGINEER</p>
-        <a href="#contacto" class="btn">Contact me</a>
+        <p class="subtitle">Estudiante de Ingeniería Telemática | Camarero | Auxiliar de Eventos | Profesor Particular</p>
+        <a href="#contacto" class="btn">Contáctame</a>
     </section>
 
     <section id="sobre-mi" class="section">
         <div class="card">
             <h2>Sobre Mí</h2>
             <p style="line-height: 1.8; font-size: 1.1rem;">
-                I am a final-year student of Telematics Engineering at the University of Alcalá de Henares (UAH), passionate about technology, telecommunications and the world of cloud computing.
-                Currently, I am training in Amazon Web Services (AWS) with the aim of becoming certified and guiding my career towards the future of digital infrastructures: web applications, databases, storage, deployment of instances and cloud architectures. 
-                In addition, I have professional experience in the service sector, where I have learned key skills such as teamwork, time management, dealing with clients and problem-solving, skills that I consider essential to grow in technological and business environments.
-                This second semester I begin my professional internship, and I am looking for opportunities in the field of: Cloud Computing (AWS, Azure, GCP) Networks and telecommunications Software Development & Web Applications.
-                I consider myself a person with a desire to learn, grow and add value from day one. I firmly believe that success is built from the ground up: with effort, a positive attitude, and the ability to adapt and improve continuously.
-                My goal is to develop my career in technology, especially in cloud and networking, to contribute to innovative projects in Spain or abroad.
+                Apasionado de la tecnología, me defino por ser una persona con ganas de aprender, atento y con facilidad de aprendizaje. Con ganas de afrontar lo que se anteponga.
             </p>
+            <div style="margin-top: 2rem;">
+                <h3 style="color: #00d4ff; margin-bottom: 1rem;">Características principales:</h3>
+                <div class="skill-grid">
+                    <div class="skill-item">Ambición</div>
+                    <div class="skill-item">Disponibilidad total</div>
+                    <div class="skill-item">Puntualidad</div>
+                    <div class="skill-item">Carnet B1</div>
+                    <div class="skill-item">Buena comunicación</div>
+                    <div class="skill-item">Trabajo en equipo</div>
+                    <div class="skill-item">Resolución de problemas</div>
+                    <div class="skill-item">Aprendizaje rápido</div>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="habilidades" class="section">
         <div class="card">
-            <h2>Technical Skills</h2>
-            <div class="skill-grid">
-                <div class="skill-item" onclick="openModal('javascript')">
-                    <div>JavaScript</div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 0" data-width="90"></div>
+            <h2>Habilidades Técnicas y Profesionales</h2>
+            <div style="margin-bottom: 2rem;">
+                <h3 style="color: #00d4ff; margin-bottom: 1rem;">Habilidades Técnicas</h3>
+                <div class="skill-grid">
+                    <div class="skill-item" onclick="openModal('organizacion')">
+                        <div>Gestión de la Organización en equipo</div>
+                    </div>
+                    <div class="skill-item" onclick="openModal('resolucion')">
+                        <div>Resolución de problemas</div>
+                    </div>
+                    <div class="skill-item" onclick="openModal('aprendizaje')">
+                        <div>Espíritu de aprendizaje</div>
+                    </div>
+                    <div class="skill-item" onclick="openModal('organizacion-personal')">
+                        <div>Organización</div>
                     </div>
                 </div>
-                <div class="skill-item" onclick="openModal('c')">
-                    <div>C</div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 0" data-width="90"></div>
-                    </div>
-                </div>
-                <div class="skill-item" onclick="openModal('python')">
-                    <div>Python</div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 0" data-width="80"></div>
-                    </div>
-                </div>
-                <div class="skill-item" onclick="openModal('html-css')">
-                    <div>CSS/HTML</div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 0" data-width="85"></div>
-                    </div>
-                </div>
-                <div class="skill-item" onclick="openModal('nodejs')">
-                    <div>Node.js</div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 0" data-width="70"></div>
-                    </div>
+            </div>
+            <div>
+                <h3 style="color: #00d4ff; margin-bottom: 1rem;">Habilidades Profesionales</h3>
+                <div class="skill-grid">
+                    <div class="skill-item">Trabajo en Equipo</div>
+                    <div class="skill-item">Atención al personal</div>
+                    <div class="skill-item">Atención al cliente</div>
+                    <div class="skill-item">Catering y barra</div>
                 </div>
             </div>
         </div>
@@ -517,31 +533,72 @@
 
     <section id="experiencia" class="section">
         <div class="card">
-            <h2>Profesional Experience</h2>
+            <h2>Experiencia Laboral</h2>
             
             <div class="experience-item" onclick="openModal('exp1')">
-                <h3>Desarrollador Senior - Empresa Tech</h3>
-                <div class="date">Enero 2022 - Presente</div>
-                <p>Lideré el desarrollo de aplicaciones web escalables, mejorando el rendimiento en un 40% y la experiencia de usuario significativamente.</p>
+                <h3>Auxiliar de Eventos - IWHATEVENT ?</h3>
+                <div class="date">Julio 2024 - Actualmente</div>
+                <p>Organización y coordinación de eventos. Atención al cliente y gestión logística.</p>
             </div>
 
             <div class="experience-item" onclick="openModal('exp2')">
-                <h3>Desarrollador Full Stack - StartUp Innovadora</h3>
-                <div class="date">Marzo 2020 - Diciembre 2021</div>
-                <p>Desarrollé desde cero la plataforma principal, implementando arquitectura moderna y mejores prácticas de desarrollo.</p>
+                <h3>Camarero - ICasa Club Madrid</h3>
+                <div class="date">Enero 2023 - Enero 2024</div>
+                <p>Atención al cliente, servicio de catering y barra. Organización del trabajo en equipo.</p>
             </div>
 
             <div class="experience-item" onclick="openModal('exp3')">
-                <h3>Desarrollador Junior - Agencia Digital</h3>
-                <div class="date">Junio 2018 - Febrero 2020</div>
-                <p>Colaboré en proyectos diversos para clientes internacionales, ganando experiencia en múltiples tecnologías.</p>
+                <h3>Profesor Particular - UNIUM</h3>
+                <div class="date">Enero 2023 - Junio 2025</div>
+                <p>Clases de asignaturas de rama científico-tecnológica, nivel ESO y Bachillerato.</p>
+            </div>
+
+            <div class="experience-item" onclick="openModal('exp4')">
+                <h3>Profesor Particular - Colegio Santa Francisca Javier Cabrini</h3>
+                <div class="date">Mayo 2022</div>
+                <p>Clases particulares de asignaturas de ESO y Bachillerato.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="educacion" class="section">
+        <div class="card">
+            <h2>Formación Académica</h2>
+            <div class="experience-item">
+                <h3>Grado en Ingeniería Telemática</h3>
+                <div class="date">Actualmente cursando</div>
+                <p><strong>Universidad Politécnica de Alcalá de Henares</strong></p>
+                <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">
+                    Estudios en telecomunicaciones, redes, programación y sistemas telemáticos.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="idiomas" class="section">
+        <div class="card">
+            <h2>Idiomas</h2>
+            <div class="languages-grid">
+                <div class="language-item">
+                    <h4>🇪🇸 Castellano</h4>
+                    <p>Nativo</p>
+                </div>
+                <div class="language-item">
+                    <h4>🇬🇧 Inglés</h4>
+                    <p>Nivel FIRST (B2)</p>
+                </div>
+                <div class="language-item">
+                    <h4>🇩🇪 Alemán</h4>
+                    <p>Nivel Básico (A2)</p>
+                    <p style="font-size: 0.9rem; margin-top: 0.3rem; opacity: 0.8;">Cursado de 1º ESO a 4º ESO</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contacto" class="section">
         <div class="card">
-            <h2>Contact</h2>
+            <h2>Contacto</h2>
             <div class="contact-info">
                 <div class="contact-item">
                     <span style="font-size: 1.5rem;">📧</span>
@@ -555,6 +612,13 @@
                     <div>
                         <strong>Teléfono</strong><br>
                         +34 601 357 082
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span style="font-size: 1.5rem;">📍</span>
+                    <div>
+                        <strong>Ubicación</strong><br>
+                        Calle Príncipe Carlos, 26, Madrid
                     </div>
                 </div>
                 <div class="contact-item">
@@ -575,7 +639,6 @@
         </div>
     </section>
 
-    <!-- Modal para mostrar información detallada -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-bubble">
             <button class="modal-close">&times;</button>
@@ -584,209 +647,108 @@
     </div>
 
     <script>
-        console.log('Script cargado correctamente');
-        // Contenido de los modals
         const modalData = {
-            'javascript': {
-                title: 'JavaScript',
+            'organizacion': {
+                title: 'Gestión de la Organización en equipo',
                 content: `
-                    <p>Experiencia avanzada en JavaScript moderno (ES6+) para desarrollo web dinámico e interactivo.</p>
+                    <p>Experiencia en coordinar equipos de trabajo y gestionar proyectos de manera eficiente.</p>
                     <ul>
-                        <li>Desarrollo de aplicaciones SPA (Single Page Applications)</li>
-                        <li>Manipulación del DOM y eventos</li>
-                        <li>Programación asíncrona con Promises y Async/Await</li>
-                        <li>APIs REST y fetch</li>
-                        <li>Frameworks: React, Vue.js</li>
+                        <li>Coordinación de eventos y actividades grupales</li>
+                        <li>Distribución de tareas y responsabilidades</li>
+                        <li>Seguimiento de objetivos y plazos</li>
+                        <li>Comunicación efectiva entre miembros del equipo</li>
                     </ul>
                 `
             },
-            'c': {
-                title: 'Lenguaje C',
+            'resolucion': {
+                title: 'Resolución de problemas',
                 content: `
-                    <p>Sólidos conocimientos en programación de sistemas y bajo nivel.</p>
+                    <p>Capacidad para identificar, analizar y resolver problemas de manera efectiva.</p>
                     <ul>
-                        <li>Gestión de memoria y punteros</li>
-                        <li>Estructuras de datos avanzadas</li>
-                        <li>Programación de sistemas embebidos</li>
-                        <li>Optimización de código</li>
-                        <li>Desarrollo de drivers y módulos del kernel</li>
+                        <li>Análisis de situaciones complejas</li>
+                        <li>Pensamiento crítico y creativo</li>
+                        <li>Toma de decisiones bajo presión</li>
+                        <li>Implementación de soluciones prácticas</li>
                     </ul>
                 `
             },
-            'python': {
-                title: 'Python',
+            'aprendizaje': {
+                title: 'Espíritu de aprendizaje',
                 content: `
-                    <p>Desarrollo con Python para automatización, scripting y análisis de datos.</p>
+                    <p>Actitud proactiva hacia el aprendizaje continuo y la adquisición de nuevas habilidades.</p>
                     <ul>
-                        <li>Scripts de automatización y DevOps</li>
-                        <li>Análisis de datos con Pandas y NumPy</li>
-                        <li>Desarrollo web con Flask/Django</li>
-                        <li>Machine Learning básico</li>
-                        <li>APIs y web scraping</li>
+                        <li>Adaptación rápida a nuevas tecnologías</li>
+                        <li>Curiosidad y búsqueda constante de conocimiento</li>
+                        <li>Apertura a feedback y mejora continua</li>
+                        <li>Autodidacta y motivado</li>
                     </ul>
                 `
             },
-            'html-css': {
-                title: 'HTML & CSS',
+            'organizacion-personal': {
+                title: 'Organización',
                 content: `
-                    <p>Diseño y desarrollo de interfaces web modernas y responsivas.</p>
+                    <p>Habilidad para estructurar tareas, gestionar el tiempo y mantener un orden efectivo.</p>
                     <ul>
-                        <li>HTML5 semántico y accesible</li>
-                        <li>CSS3 con Flexbox y Grid</li>
-                        <li>Diseño responsive y mobile-first</li>
-                        <li>Animaciones y transiciones CSS</li>
-                        <li>Preprocesadores: SASS/SCSS</li>
-                    </ul>
-                `
-            },
-            'nodejs': {
-                title: 'Node.js',
-                content: `
-                    <p>Desarrollo backend con Node.js para aplicaciones escalables.</p>
-                    <ul>
-                        <li>APIs RESTful con Express.js</li>
-                        <li>Gestión de bases de datos (MongoDB, MySQL)</li>
-                        <li>Autenticación y autorización (JWT, OAuth)</li>
-                        <li>WebSockets para aplicaciones en tiempo real</li>
-                        <li>Despliegue en cloud (AWS, Heroku)</li>
+                        <li>Gestión eficiente del tiempo</li>
+                        <li>Priorización de tareas</li>
+                        <li>Planificación y seguimiento de proyectos</li>
+                        <li>Mantenimiento de espacios de trabajo ordenados</li>
                     </ul>
                 `
             },
             'exp1': {
-                title: 'Desarrollador Senior - Empresa Tech',
+                title: 'Auxiliar de Eventos - IWHATEVENT ?',
                 content: `
-                    <p><strong>Período:</strong> Enero 2022 - Presente</p>
-                    <p>Como desarrollador senior, lideré múltiples proyectos clave para la empresa:</p>
+                    <p><strong>Período:</strong> Julio 2024 - Actualmente</p>
+                    <p>Responsabilidades principales:</p>
                     <ul>
-                        <li>Arquitectura y desarrollo de aplicaciones web escalables</li>
-                        <li>Implementación de microservicios con Docker y Kubernetes</li>
-                        <li>Mentoría de desarrolladores junior y mid-level</li>
-                        <li>Optimización de rendimiento: reducción del 40% en tiempos de carga</li>
-                        <li>Integración de CI/CD con Jenkins y GitHub Actions</li>
-                        <li>Code reviews y establecimiento de mejores prácticas</li>
+                        <li>Coordinación y organización de eventos diversos</li>
+                        <li>Atención personalizada a clientes y asistentes</li>
+                        <li>Gestión logística de materiales y espacios</li>
+                        <li>Trabajo en equipo bajo presión</li>
+                        <li>Resolución de imprevistos durante eventos</li>
+                        <li>Montaje y desmontaje de instalaciones</li>
                     </ul>
-                    <p><strong>Tecnologías:</strong> React, Node.js, AWS, Docker, PostgreSQL</p>
                 `
             },
             'exp2': {
-                title: 'Desarrollador Full Stack - StartUp Innovadora',
+                title: 'Camarero - ICasa Club Madrid',
                 content: `
-                    <p><strong>Período:</strong> Marzo 2020 - Diciembre 2021</p>
-                    <p>Desarrollo completo de la plataforma principal de la startup:</p>
+                    <p><strong>Período:</strong> Enero 2023 - Enero 2024</p>
+                    <p>Funciones desempeñadas:</p>
                     <ul>
-                        <li>Diseño e implementación de arquitectura moderna</li>
-                        <li>Desarrollo frontend con React y Redux</li>
-                        <li>Backend con Node.js y Express</li>
-                        <li>Integración de pasarelas de pago (Stripe)</li>
-                        <li>Implementación de sistema de notificaciones en tiempo real</li>
-                        <li>Pruebas unitarias y de integración</li>
+                        <li>Atención al cliente en barra y sala</li>
+                        <li>Servicio de catering en eventos</li>
+                        <li>Gestión de pedidos y facturación</li>
+                        <li>Trabajo en equipo con cocina y otros camareros</li>
+                        <li>Mantenimiento de la limpieza y orden del establecimiento</li>
+                        <li>Organización del espacio de trabajo</li>
                     </ul>
-                    <p><strong>Tecnologías:</strong> React, Redux, Node.js, MongoDB, Socket.io</p>
                 `
             },
             'exp3': {
-                title: 'Desarrollador Junior - Agencia Digital',
+                title: 'Profesor Particular - UNIUM',
                 content: `
-                    <p><strong>Período:</strong> Junio 2018 - Febrero 2020</p>
-                    <p>Primeros pasos profesionales en desarrollo web:</p>
+                    <p><strong>Período:</strong> Enero 2023 - Junio 2025</p>
+                    <p>Experiencia docente:</p>
                     <ul>
-                        <li>Desarrollo de sitios web corporativos y landing pages</li>
-                        <li>Maquetación responsive con HTML5, CSS3 y JavaScript</li>
-                        <li>Integración de CMS (WordPress, Drupal)</li>
-                        <li>Colaboración en proyectos para clientes internacionales</li>
-                        <li>Aprendizaje de metodologías ágiles (Scrum)</li>
-                        <li>Control de versiones con Git</li>
+                        <li>Clases particulares de asignaturas científico-tecnológicas</li>
+                        <li>Niveles: ESO y Bachillerato</li>
+                        <li>Preparación de materiales didácticos personalizados</li>
+                        <li>Seguimiento del progreso de los alumnos</li>
+                        <li>Adaptación de metodologías según las necesidades del estudiante</li>
+                        <li>Comunicación con padres y tutores</li>
                     </ul>
-                    <p><strong>Tecnologías:</strong> HTML, CSS, JavaScript, PHP, WordPress, Git</p>
                 `
-            }
-        };
-
-        function openModal(id) {
-            console.log('Abriendo modal:', id);
-            const modal = document.getElementById('modalOverlay');
-            const content = document.getElementById('modalContent');
-            const data = modalData[id];
-            
-            console.log('Modal element:', modal);
-            console.log('Content element:', content);
-            console.log('Data:', data);
-            
-            if (data) {
-                content.innerHTML = `<h3>${data.title}</h3>${data.content}`;
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                console.log('Modal abierto');
-            } else {
-                console.log('No se encontró data para:', id);
-            }
-        }
-
-        function closeModal(event) {
-            console.log('Cerrando modal');
-            const modal = document.getElementById('modalOverlay');
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Event listeners para cerrar modal
-        document.getElementById('modalOverlay').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-
-        document.querySelector('.modal-close').addEventListener('click', closeModal);
-
-        // Cerrar modal con tecla ESC
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
-
-        // Animación de scroll para secciones
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    
-                    // Animar barras de habilidades
-                    const skillBars = entry.target.querySelectorAll('.skill-progress');
-                    skillBars.forEach(bar => {
-                        const width = bar.getAttribute('data-width');
-                        setTimeout(() => {
-                            bar.style.width = width + '%';
-                        }, 200);
-                    });
-                }
-            });
-        }, { threshold: 0.2 });
-
-        document.querySelectorAll('.section').forEach(section => {
-            observer.observe(section);
-        });
-
-        // Smooth scroll para navegación
-        document.querySelectorAll('.nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const target = document.querySelector(targetId);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Efecto parallax sutil en el scroll
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.hero');
-            if (parallax) {
-                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
-    </script>
-</body>
-</html>
+            },
+            'exp4': {
+                title: 'Profesor Particular - Colegio Santa Francisca Javier Cabrini',
+                content: `
+                    <p><strong>Período:</strong> Mayo 2022</p>
+                    <p>Experiencia en el ámbito educativo:</p>
+                    <ul>
+                        <li>Clases de refuerzo escolar en asignaturas de ESO y Bachillerato</li>
+                        <li>Especialmente enfocado en ramas científico-tecnológicas</li>
+                        <li>Apoyo en la preparación de exámenes</li>
+                        <li>Técnicas de estudio y organización</li>
+                        <li>
